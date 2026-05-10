@@ -1,0 +1,300 @@
+/* --- グローバル設定 & 変数 --- */
+:root {
+    --primary-color: #007bff;
+    --primary-hover: #0056b3;
+    --danger-color: #dc3545;
+    --danger-hover: #c82333;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --light-bg: #f8f9fa;
+    --white: #ffffff;
+    --text-color: #333;
+    --border-color: #dee2e6;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --border-radius: 10px;
+    --share-color: #06C755;
+    --share-hover: #05a848;
+}
+
+/* --- 基本スタイル --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--light-bg);
+    margin: 0;
+    color: var(--text-color);
+    font-size: 16px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+h1, h2, h3 {
+    margin: 0 0 0.8em 0;
+}
+
+i {
+    margin-right: 0.5em;
+}
+
+/* --- ヘッダー --- */
+.app-header {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--primary-color);
+}
+.app-header h1 {
+    font-size: 2.2em;
+    font-weight: 700;
+    margin-bottom: 0.2em;
+}
+.app-header p {
+    font-size: 1em;
+    color: #6c757d;
+    margin: 0;
+}
+
+/* --- カードスタイル --- */
+.card {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}
+.card h2 {
+    font-size: 1.4em;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+/* --- フォーム & 入力グループ --- */
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+input[type="text"], input[type="number"], select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 16px; /* iOSのズーム防止 */
+    -webkit-appearance: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+/* --- ボタン --- */
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.2s, transform 0.1s;
+}
+button:active {
+    transform: translateY(1px);
+}
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+#addParticipantButton {
+    flex-shrink: 0;
+    width: auto;
+    padding: 12px 20px;
+}
+
+.btn-main {
+    background-color: var(--success-color);
+    color: var(--white);
+    font-size: 1.2em;
+    padding: 15px;
+}
+.btn-main:hover {
+    background-color: #218838;
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    color: var(--white);
+}
+.btn-danger:hover {
+    background-color: var(--danger-hover);
+}
+
+/* --- 共有ボタン --- */
+.btn-share {
+    background-color: var(--share-color);
+    color: var(--white);
+    margin-top: 25px;
+}
+.btn-share:hover {
+    background-color: var(--share-hover);
+}
+.btn-share:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* --- リスト --- */
+.list-title {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #6c757d;
+}
+.item-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+.item-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    background-color: #f1f3f5;
+    animation: fadeIn 0.4s ease;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.expense-content {
+    flex-grow: 1;
+    word-break: break-all;
+}
+
+.delete-btn {
+    background-color: transparent;
+    color: var(--danger-color);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    font-size: 1.2em;
+    padding: 0;
+    margin-left: 10px;
+    transition: background-color 0.2s, color 0.2s;
+}
+.delete-btn:hover {
+    background-color: #f8d7da;
+    color: var(--danger-hover);
+}
+.delete-btn .fa-trash-alt {
+    margin: 0;
+}
+
+/* --- 結果表示エリア --- */
+/* 精算結果セクション内の要素の余白を調整 */
+#resultArea .list-title {
+    margin-top: 15px; /* 上の余白を減らす */
+    margin-bottom: 5px; /* 下の余白を減らす */
+}
+
+/* 各リスト項目の上下の余白を調整 */
+#resultArea .item-list li {
+    padding-top: 8px; /* 上の余白を減らす */
+    padding-bottom: 8px; /* 下の余白を減らす */
+    margin-bottom: 5px; /* 項目間の余白を減らす */
+}
+
+/* 概要ボックスの余白を調整 */
+.summary-box {
+    padding: 10px; /* 全体の余白を減らす */
+    font-size: 1em; /* 少しフォントを小さくする */
+}
+
+.result-card {
+    border-color: var(--primary-color);
+}
+.summary-box {
+    font-size: 1.1em;
+    font-weight: 500;
+    background-color: #e7f3ff;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 1.8;
+}
+
+#balanceList li.positive {
+    background-color: #d4edda;
+    border-left: 5px solid var(--success-color);
+    color: #155724;
+}
+#balanceList li.negative {
+    background-color: #f8d7da;
+    border-left: 5px solid var(--danger-color);
+    color: #721c24;
+}
+
+#transactionList li {
+    background-color: #d1ecf1;
+    border-left: 5px solid #0dcaf0;
+    font-weight: 500;
+}
+
+/* --- フッター --- */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* スピナーアニメーション */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.fa-spinner {
+    animation: spin 1s linear infinite;
+}
