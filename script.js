@@ -401,7 +401,12 @@ function generateResultText() {
         resultText += `合計金額: ${totalAmountMatch[1]}\n`;
         resultText += `一人あたり: ${perPersonMatch[1]}\n`;
     }
-    
+
+    resultText += '\n🧾 支払い情報━━━━━━━\n';
+    expenses.forEach(expense => {
+        resultText += `・${expense.description}: ${expense.amount.toLocaleString()}円（${expense.payer}）\n`;
+    });
+
     resultText += '\n📊 各個人の収支━━━━━━━\n';
     
     // 収支リスト
