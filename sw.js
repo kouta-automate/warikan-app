@@ -1,4 +1,4 @@
-const CACHE_NAME = 'warikan-v1';
+const CACHE_NAME = 'warikan-v2';
 const LOCAL_ASSETS = [
   './',
   './index.html',
