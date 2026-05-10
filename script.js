@@ -389,7 +389,7 @@ async function shareResults() {
  * テキスト形式の結果を生成する関数
  */
 function generateResultText() {
-    let resultText = '💰 精算結果\n━━━━━━━━━━━━━━━━━━\n';
+    let resultText = '💰 精算結果━━━━━━━\n';
     
     // 概要
     const summaryElement = document.getElementById('summaryText');
@@ -402,7 +402,7 @@ function generateResultText() {
         resultText += `一人あたり: ${perPersonMatch[1]}\n`;
     }
     
-    resultText += '\n📊 各個人の収支\n━━━━━━━━━━━━━━━━━━\n';
+    resultText += '\n📊 各個人の収支━━━━━━━\n';
     
     // 収支リスト
     const balanceItems = document.querySelectorAll('#balanceList li');
@@ -413,7 +413,7 @@ function generateResultText() {
         resultText += `${emoji} ${text}\n`;
     });
     
-    resultText += '\n💸 必要な支払い\n━━━━━━━━━━━━━━━━━━\n';
+    resultText += '\n💸 必要な支払い━━━━━━━\n';
     
     // 支払いリスト
     const transactionItems = document.querySelectorAll('#transactionList li');
