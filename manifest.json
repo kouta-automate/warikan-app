@@ -1,0 +1,19 @@
+{
+  "name": "スマート割り勘",
+  "short_name": "割り勘",
+  "description": "旅行やイベントの支払いをスマートに精算",
+  "start_url": "/warikan-app/",
+  "scope": "/warikan-app/",
+  "display": "standalone",
+  "background_color": "#f8f9fa",
+  "theme_color": "#007bff",
+  "lang": "ja",
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
